@@ -129,12 +129,12 @@
 
   <distributionManagement>
     <snapshotRepository>
-      <id>Maven-Nexus</id>
+      <id>deployment</id>
       <name>my snapshot repository</name>
       <url>http://44.193.5.8:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
     <repository>
-      <id>Maven-Nexus</id>
+      <id>deployment</id>
       <name>my repository</name>
       <url>http://44.193.5.8:8081/repository/maven-releases/</url>
     </repository>
