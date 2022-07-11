@@ -1,13 +1,7 @@
-Tool - Maven3
-Plugin pre-requisites:
-   -Deploy to container
-agent/slave - buildserver
-
-
 pipeline {
 
    agent {
-      label 'buildserver'
+      label 'BuildServer1'
    }
         
 
