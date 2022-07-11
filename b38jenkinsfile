@@ -1,17 +1,23 @@
 pipeline {
 
-   agent {
-      label 'BuildServer1'
+agent {
+   label 'buildserver'
+}
+
+tools {
+     maven "maven3"
+}
+
+stages {
+
+   stage("Compile-Src-Code"){
+     steps{
+       echo 'Compile Src Code'
+       git credentialsId: 'GitHub-Credential', url: 'https://github.com/RSRevanth/Maven-Java-Project.git'
+
+       sh "mvn clean compile"
+     }
    }
-        
-
-   stages {
-
-      stage("Compile-Src-Code"){
-        steps{
-	        echo 'Compile Src Code'
-        }
-      }
 
       stage("Pre-Deployment-Testing"){
           steps{
