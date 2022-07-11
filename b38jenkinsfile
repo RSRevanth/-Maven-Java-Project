@@ -19,12 +19,18 @@ stages {
      }
    }
 
-      stage("Pre-Deployment-Testing"){
+   stage("Pre-Deployment-Testing"){
           steps{
             echo 'Pre-Deployment-Testing'
+            sh "mvn clean test"
+          }
+          post{
+            success{
+              junit '**/target/surefire-reports/*.xml'
+            }
+
           }
       }
-
       stage("Packaging-Application"){
         steps{
         	 echo 'Packaging-Application'
